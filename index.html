@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hi Fatima</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #6a0dad, #2b004f);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+/* aurora lines */
+.aurora {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.06) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  animation: auroraMove 12s linear infinite;
+}
+
+@keyframes auroraMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* button */
+#hiButton {
+  padding: 20px 50px;
+  background: #ff69b4;
+  border: none;
+  border-radius: 18px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+#hiButton:hover {
+  transform: scale(1.1);
+}
+
+/* message card */
+#card {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 200, 220, 0.97);
+  padding: 35px;
+  border-radius: 30px;
+  border: 6px double white;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,255,255,0.5);
+}
+
+#card h1 {
+  color: #4b006e;
+  margin-bottom: 20px;
+}
+
+#card img {
+  width: 220px;
+  border-radius: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="aurora"></div>
+
+<button id="hiButton">Hi Fatima</button>
+
+<div id="card">
+  <h1>✨ Thank u Next ✨</h1>
+  <img src="ariana.jpg" alt="Ariana Grande">
+</div>
+
+<audio id="song" src="thankunext.mp3"></audio>
+
+<script>
+const btn = document.getElementById("hiButton");
+const card = document.getElementById("card");
+const song = document.getElementById("song");
+
+btn.onclick = () => {
+  card.style.display = "block";
+  song.play();
+};
+</script>
+
+</body>
+</html>
